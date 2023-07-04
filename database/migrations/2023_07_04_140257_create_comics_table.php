@@ -19,7 +19,7 @@ return new class extends Migration
             $table->tinytext("title");
             $table->text("description");
             $table->string("thumb");
-            $table->smallint("price");
+            $table->string("price");
             $table->string("series", 50);
             $table->date("sale_date");
             $table->string("type", 50);
