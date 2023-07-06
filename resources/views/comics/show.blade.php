@@ -10,8 +10,17 @@
                     <a href="{{ route("comics.show", $comic->id)}}"><div>{{$comic["title"]}}</div></a>
                     <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="thumb"> 
                 </div>
-                <a href="{{route("home")}}">Torna all'homepage</a>
+                <div class="ms-3">
+                    <div>Descrizione: {{$comic["description"]}}</div>
+                    <div>Prezzo: {{$comic["price"]}}</div>
+                    <div>Serie: {{$comic["series"]}}</div>
+                    <div>Data di uscita: {{$comic["sale_date"]}}</div>
+                    <div>Categoria: {{$comic["type"]}}</div>
+                    <div>Artisti: {{$comic["artists"]}}</div>
+                    <div>Scrittori: {{$comic["writers"]}}</div>
+                </div>
             </div>
+            <a href="{{route("home")}}">Torna all'homepage</a>
         </div>
     </div>
 

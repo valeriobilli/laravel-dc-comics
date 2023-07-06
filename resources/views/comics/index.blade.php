@@ -3,8 +3,9 @@
 @section('content')
 
     <div class="container my-3">
-        <h1>Welcome Page</h1>
+        <h1>Comics list</h1>
         <div class="row g-4">
+            <a class="btn btn-primary" href="{{ route("comics.create") }}">Aggiungi un nuovo fumetto</a>
             <div class="col d-flex flex-wrap">
                 @foreach ($comics as $comic)
                     <div class="card comic text-center">
