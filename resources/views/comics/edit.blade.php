@@ -3,11 +3,14 @@
 @section('content')
 
     <div class="container my-3">
-        <h1>Create</h1>
+        <h1>Modifica</h1>
         <div class="row g-4">
             <div class="col">
-                <form action="{{ route('comics.store')}}" method="post">
+                <form action="{{ route('comics.update', $comic->id) }}" method="post">
                     @csrf {{-- va inserito in ogni form per questioni di sicurezza  --}}
+
+                    {{-- metodo aggiunto con direttiva blade --}}
+                    @method('PUT') 
                      
                     <label for="title">Titolo</label>
                     <input class="form-control mb-3" type="text" name="title" id="title" value="{{$comic->title}}">
@@ -36,7 +39,7 @@
                     <label for="writers">Scrittori</label>
                     <input class="form-control mb-5" type="text" name="writers" id="writers" value="{{$comic->writers}}">
 
-                    <input class="form-control mb-3" type="submit" value="Crea">
+                    <input class="form-control btn btn-success mb-3" type="submit" value="Modifica">
 
                 </form>
             </div>
