@@ -6,8 +6,10 @@
         <h1>Create</h1>
         <div class="row g-4">
             <div class="col">
-                <form action="{{ route('comics.store')}}" method="post">
+                <form action="{{ route('comics.update', $comic ) }}" method="post">
                     @csrf {{-- va inserito in ogni form per questioni di sicurezza  --}}
+
+                    @method("PUT")
                      
                     <label for="title">Titolo</label>
                     <input class="form-control mb-3" type="text" name="title" id="title">

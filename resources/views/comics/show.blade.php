@@ -10,7 +10,7 @@
                     <a href="{{ route("comics.show", $comic->id)}}"><div>{{$comic["title"]}}</div></a>
                     <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="thumb"> 
                 </div>
-                <div class="ms-3">
+                <div class="mt-3">
                     <div>Descrizione: {{$comic["description"]}}</div>
                     <div>Prezzo: {{$comic["price"]}}</div>
                     <div>Serie: {{$comic["series"]}}</div>
