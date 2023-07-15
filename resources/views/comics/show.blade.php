@@ -3,14 +3,13 @@
 @section('content')
 
     <div class="container my-3">
-        <h1>Card: {{$comic->title}}</h1>
-        <div class="row g-4">
-            <div class="col">
-                <div class="card comic text-center">
-                    <a href="{{ route("comics.show", $comic->id)}}"><div>{{$comic["title"]}}</div></a>
-                    <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="thumb"> 
-                </div>
-                <div class="mt-3">
+        <h1>{{$comic->title}}</h1>
+        <div class="row mt-3">
+            <div class="col d-flex">
+                
+                <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="thumb"> 
+                
+                <div class="ms-3">
                     <div>Descrizione: {{$comic["description"]}}</div>
                     <div>Prezzo: {{$comic["price"]}}</div>
                     <div>Serie: {{$comic["series"]}}</div>
@@ -21,13 +20,22 @@
                 </div>
             </div>
             <a href="{{route("home")}}">Torna alla lista dei fumetti</a>
-            <a href="{{route("comics.edit", $comic->id)}}">Modifica fumetto</a>
-            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input type="submit" class="btn btn-danger" value="Elimina fumetto">
-
-            </form>
+        </div>
+        <div class="row">
+            <div class="col d-flex">
+            
+                <div>
+                    <a class="btn btn-success me-3" href="{{route("comics.edit", $comic->id)}}">Modifica fumetto</a>
+                </div>
+    
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger" value="Elimina fumetto">
+                </form>
+                
+            </div>
+            
         </div>
     </div>
 
