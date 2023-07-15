@@ -22,6 +22,12 @@
             </div>
             <a href="{{route("home")}}">Torna alla lista dei fumetti</a>
             <a href="{{route("comics.edit", $comic->id)}}">Modifica fumetto</a>
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" class="btn btn-danger" value="Elimina fumetto">
+
+            </form>
         </div>
     </div>
 
