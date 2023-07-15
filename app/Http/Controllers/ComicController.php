@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -29,6 +30,20 @@ class ComicController extends Controller
         return view("comics.create");
     }
 
+    
+    private function validateComics($data) {
+        $validator = Validator::make($data, [
+            "title" => "required|min:3|max:100",
+            "thumb" => "required",
+            "price" => "required|max:10",
+            "sale_date" => "required",
+            "artists" => "required|max:50",
+            "writers" => "required|max:50",
+        ])->validate();
+
+        return $validator;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,7 +52,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+// validazione con metodo laravel
+        // $request->validate([
+        //     "title" => "required|min:3|max:100",
+        //     "thumb" => "required",
+        //     "price" => "required|max:10",
+        //     "sale_date" => "required",
+        //     "artists" => "required|max:50",
+        //     "writers" => "required|max:50",
+        // ]);
+        // $data = $request->all();
+
+        $data = $this->validateComics( $request->all() );
 
         $newComic = new Comic;
         $newComic->title = $data['title'];
@@ -49,6 +75,7 @@ class ComicController extends Controller
         $newComic->type = $data['type'];
         $newComic->artists = $data['artists'];
         $newComic->writers = $data['writers'];
+        
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->id);
@@ -89,7 +116,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $this->validateComics( $request->all() );
 
         $comic->title = $data['title'];
         $comic->description = $data['description'];

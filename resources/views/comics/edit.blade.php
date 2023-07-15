@@ -4,6 +4,18 @@
 
     <div class="container my-3">
         <h1>Modifica</h1>
+        <a class="mb-4" href="{{ route('comics.show', $comic->id) }}">Torna ai dettagli del fumetto</a>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        
         <div class="row g-4">
             <div class="col">
                 <form action="{{ route('comics.update', $comic->id) }}" method="post">
@@ -12,7 +24,7 @@
                     {{-- metodo aggiunto con direttiva blade --}}
                     @method('PUT') 
                      
-                    <label for="title">Titolo</label>
+                    <label class="mt-2" for="title">Titolo</label>
                     <input class="form-control mb-3" type="text" name="title" id="title" value="{{$comic->title}}">
 
                     <label for="description">Descrizione</label>
