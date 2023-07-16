@@ -13,7 +13,7 @@
                     <div class="mb-2"><span class="badge text-bg-primary">Descrizione:</span> {{$comic["description"]}}</div>
                     <div class="mb-2"><span class="badge text-bg-primary">Prezzo:</span> {{$comic["price"]}}</div>
                     <div class="mb-2"><span class="badge text-bg-primary">Serie:</span> {{$comic["series"]}}</div>
-                    <div class="mb-2"><span class="badge text-bg-primary">Data di</span> uscita: {{$comic["sale_date"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Data di uscita:</span> {{$comic["sale_date"]}}</div>
                     <div class="mb-2"><span class="badge text-bg-primary">Categoria:</span> {{$comic["type"]}}</div>
                     <div class="mb-2"><span class="badge text-bg-primary">Artisti:</span> {{$comic["artists"]}}</div>
                     <div class="mb-2"><span class="badge text-bg-primary">Scrittori:</span> {{$comic["writers"]}}</div>
