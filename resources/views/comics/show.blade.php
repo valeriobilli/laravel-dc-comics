@@ -10,13 +10,13 @@
                 <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="thumb"> 
                 
                 <div class="ms-3">
-                    <div>Descrizione: {{$comic["description"]}}</div>
-                    <div>Prezzo: {{$comic["price"]}}</div>
-                    <div>Serie: {{$comic["series"]}}</div>
-                    <div>Data di uscita: {{$comic["sale_date"]}}</div>
-                    <div>Categoria: {{$comic["type"]}}</div>
-                    <div>Artisti: {{$comic["artists"]}}</div>
-                    <div>Scrittori: {{$comic["writers"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Descrizione:</span> {{$comic["description"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Prezzo:</span> {{$comic["price"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Serie:</span> {{$comic["series"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Data di</span> uscita: {{$comic["sale_date"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Categoria:</span> {{$comic["type"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Artisti:</span> {{$comic["artists"]}}</div>
+                    <div class="mb-2"><span class="badge text-bg-primary">Scrittori:</span> {{$comic["writers"]}}</div>
                 </div>
             </div>
         </div>
